@@ -1808,6 +1808,18 @@
                 }
             }
         },
+        
+        "list-releases": {
+            "url": "/repos/:user/:repo/releases",
+            "method": "GET",
+            "media-type": "application/vnd.github.manifold-preview",
+            "params": {
+                "$user": null,
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
+            }
+        },
 
         "get-contributors": {
             "url": "/repos/:user/:repo/contributors",
