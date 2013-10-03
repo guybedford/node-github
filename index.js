@@ -631,6 +631,11 @@ var Client = module.exports = function(config) {
                 ? "application/json"
                 : "application/x-www-form-urlencoded";
         }
+        // custom block media types (http://developer.github.com/v3/media/)
+        if (block['media-type']) {
+            headers["accept"] = block['media-type'];
+        }
+        
         if (this.auth) {
             var basic;
             switch (this.auth.type) {
