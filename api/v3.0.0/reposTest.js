@@ -186,6 +186,22 @@ describe("[repos]", function() {
             }
         );
     });
+    
+    it("should successfully execute GET /repos/:user/:repo/releases (listReleases)",  function(next) {
+        client.repos.listReleases(
+            {
+                user: "String",
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
+            },
+            function(err, res) {
+                Assert.equal(err, null);
+                // other assertions go here
+                next();
+            }
+        );
+    });
 
     it("should successfully execute GET /repos/:user/:repo/contributors (getContributors)",  function(next) {
         client.repos.getContributors(
